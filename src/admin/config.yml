@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+logo_url: https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/clown-face_1f921.png
+
+media_folder: static/img
+public_folder: ../../static/img
+
+collections:
+  - name: "captcha"
+    label: "Captcha"
+    extension: "md"
+    folder: "content/captcha"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          hint: 'This is what will be displayed as prompt text. E.g. "Feet" -> "Please select all squares with Feet"',
+          required: true,
+        }
+      - label: "Images"
+        name: "images"
+        min: 1,
+        max: 9,
+        widget: "list"
+        fields:
+          - {
+              label: "Image",
+              name: "Image",
+              widget: "image",
+              hint: "Please try to keep below 300kb! https://tinypng.com/ is a great tool for image compression.<br>If less than nine images a specified, then random ones will be used to fill the difference.",
+              required: true,
+              default: "",
+            }
+          - {
+              label: "Is Correct",
+              name: "correct",
+              widget: "boolean",
+              hint: "Whether or not this option is required to be selected to advance.",
+              required: true,
+              default: false,
+            }
