@@ -2,8 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-logo_url: https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/clown-face_1f921.png
-
 media_folder: static/img
 public_folder: ../../static/img
 
@@ -25,8 +23,8 @@ collections:
         }
       - label: "Images"
         name: "images"
-        min: 1,
-        max: 9,
+        min: 1
+        max: 9
         widget: "list"
         fields:
           - {
