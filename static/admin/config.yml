@@ -25,15 +25,17 @@ collections:
         name: "images"
         min: 1
         max: 9
+        hint: "If less than nine images a specified, then random ones will be used to fill the difference."
         widget: "list"
         fields:
           - {
               label: "Image",
               name: "Image",
               widget: "image",
-              hint: "Please try to keep below 300kb! https://tinypng.com/ is a great tool for image compression.<br>If less than nine images a specified, then random ones will be used to fill the difference.",
+              hint: "Please try to keep below ~200kb! https://tinypng.com/ is a great tool for image compression.",
               required: true,
               default: "",
+              choose_url: false,
             }
           - {
               label: "Is Correct",
