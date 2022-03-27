@@ -55,19 +55,19 @@ collections:
               default: false,
             }
   - name: "randomImages"
-      label: "Random Images"
-      extension: "md"
-      folder: "content/randomImages"
-      create: true
-      editor:
-        preview: false
-      fields:
-        - label: "Images"
-          hint: "Pick which images are eligible to be picked at random to fill out other puzzles."
-          name: "images"
-          widget: "list"
-          fields:
-            - {
+    label: "Random Images"
+    extension: "md"
+    folder: "content/randomImages"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - label: "Images"
+        hint: "Pick which images are eligible to be picked at random to fill out other puzzles."
+        name: "images"
+        widget: "list"
+        fields:
+          - {
               label: "Image",
               name: "image",
               widget: "image",
