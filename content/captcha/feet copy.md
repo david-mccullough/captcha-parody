@@ -1,5 +1,6 @@
 ---
 title: Even more feet
+priority: 2
 images:
   - correct: true
     image: "../../static/img/pexels-2.jpg"

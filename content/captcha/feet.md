@@ -1,5 +1,6 @@
 ---
 title: Feet
+priority: 0
 images:
   - correct: false
     image: ../../static/img/pexels-1.jpg

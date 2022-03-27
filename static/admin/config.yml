@@ -21,6 +21,15 @@ collections:
           hint: 'This is what will be displayed as prompt text. E.g. "Feet" -> "Please select all squares with Feet"',
           required: true,
         }
+      - {
+          label: "Order Priority",
+          name: "priority",
+          value_type: "int",
+          widget: "number",
+          hint: "Captcha puzzles appear in order from lowest to highest.",
+          required: true,
+          default: 0,
+        }
       - label: "Images"
         name: "images"
         min: 1
@@ -44,4 +53,26 @@ collections:
               hint: "Whether or not this option is required to be selected to advance.",
               required: true,
               default: false,
+            }
+  - name: "randomImages"
+      label: "Random Images"
+      extension: "md"
+      folder: "content/randomImages"
+      create: true
+      editor:
+        preview: false
+      fields:
+        - label: "Images"
+          hint: "Pick which images are eligible to be picked at random to fill out other puzzles."
+          name: "images"
+          widget: "list"
+          fields:
+            - {
+              label: "Image",
+              name: "image",
+              widget: "image",
+              hint: "Please try to keep below ~200kb! https://tinypng.com/ is a great tool for image compression.",
+              required: true,
+              default: "",
+              choose_url: false,
             }

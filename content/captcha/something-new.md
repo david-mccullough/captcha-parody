@@ -1,8 +1,6 @@
 ---
 title: Something new
 images:
-  - image: ../../static/img/pexels-1.jpg
-    correct: false
-  - image: ../../static/img/dancing_baby.gif
+  - image: ../../static/img/pexels-5.jpg
     correct: true
 ---

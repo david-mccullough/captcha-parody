@@ -30,11 +30,13 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
   return (
     <div className="max-w-xl overflow-hidden bg-white rounded-md shadow-xl">
       {/* Heading */}
-      <div className="p-4 text-white bg-blue-700">
+      <div className="p-4 text-sm text-white bg-blue-700 sm:text-base">
         <h2>
           Please select all squares with
           <br />
-          <span className="text-3xl font-bold">{captcha.title}</span>
+          <span className="text-2xl font-bold sm:text-3xl">
+            {captcha.title}
+          </span>
         </h2>
         <p>if there are none, click Skip</p>
       </div>

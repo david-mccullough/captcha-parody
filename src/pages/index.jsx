@@ -20,9 +20,14 @@ const IndexPage = ({
     edges.forEach((edge) =>
       edge.node.frontmatter.images.forEach((x) => (x.image.id = uuid()))
     );
-    // shuffle captcha puzzles
+    // shuffle captcha puzzles?
     //setPuzzles(shuffle(edges));
-    setPuzzles(edges);
+    // sort captcha puzzles
+    setPuzzles(
+      edges.sort(
+        (a, b) => a.node.frontmatter.priority - b.node.frontmatter.priority
+      )
+    );
   }, []);
 
   return (
@@ -69,6 +74,7 @@ export const AllCaptchaQuery = graphql`
           id
           frontmatter {
             title
+            priority
             images {
               image {
                 id
