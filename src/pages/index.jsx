@@ -26,7 +26,7 @@ const IndexPage = ({
   }, []);
 
   return (
-    <main className="flex items-center justify-center h-screen p-2 align-middle">
+    <main className="flex items-center justify-center h-screen p-3 align-middle">
       <title>Home Page</title>
       <div className="">
         {isComplete ? (
