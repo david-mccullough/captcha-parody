@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SelectableImage from "./selectable-image";
 
 const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
   const [checkedList, setCheckedList] = useState(checked);
   const [showFailMessage, setShowFailMessage] = useState(false);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    setImages(shuffle(captcha.images));
+  }, [captcha]);
 
   const handleCheck = (id, isChecked) => {
     var updatedList = [...checkedList];
@@ -34,7 +39,7 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
       </div>
       {/* Tiles */}
       <div className="flex flex-wrap gap-2 p-3 md:gap-3">
-        {captcha.images.map((item, i) => (
+        {images.map((item, i) => (
           <SelectableImage
             key={i}
             Image={item.image}
@@ -94,7 +99,7 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
             // all correct ids are checked
             // todo: fail if incorrect option is checked
             if (
-              captcha.images
+              images
                 .filter((x) => x.correct)
                 .every((x, i) => checkedList.includes(x.image.id))
             ) {
@@ -116,3 +121,23 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
 };
 
 export default Captcha;
+
+function shuffle(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}

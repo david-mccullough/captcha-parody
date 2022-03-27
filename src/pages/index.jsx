@@ -1,8 +1,8 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import SelectableImage from "../components/selectable-image";
 import Captcha from "../components/captcha";
 import { v4 as uuid } from "uuid";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = ({
   data: {
@@ -22,9 +22,10 @@ const IndexPage = ({
       <title>Home Page</title>
       <div className="">
         {isComplete ? (
-          <>
+          <div className="flex flex-col items-center gap-2">
+            <img src="/img/dancing_baby.gif" alt="dancing baby"></img>
             <h1>welcome to scrawnyclownsnatch.com!</h1>
-          </>
+          </div>
         ) : (
           <Captcha
             captcha={edges[currentCaptchaIndex].node.frontmatter}
@@ -37,8 +38,8 @@ const IndexPage = ({
               }
             }}
             onFail={() => {
-              // todo: shuffle captcha order
-              setCurrentCaptchaIndex(0);
+              // todo: shuffle puzzle order
+              //setCurrentCaptchaIndex(0);
             }}
             onReset={() => {
               setCurrentCaptchaIndex(0);
