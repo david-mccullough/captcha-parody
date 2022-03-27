@@ -1,8 +1,8 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Captcha from "../components/captcha";
 import { v4 as uuid } from "uuid";
-import { StaticImage } from "gatsby-plugin-image";
+import { shuffle } from "../utils";
 
 const IndexPage = ({
   data: {
@@ -13,9 +13,17 @@ const IndexPage = ({
   const [currentCaptchaIndex, setCurrentCaptchaIndex] = React.useState(0);
   const [isComplete, setIsComplete] = React.useState(false);
 
-  edges.forEach((edge) =>
-    edge.node.frontmatter.images.forEach((x) => (x.image.id = uuid()))
-  );
+  const [puzzles, setPuzzles] = useState([{}]);
+
+  useEffect(() => {
+    // assign unique id to each image
+    edges.forEach((edge) =>
+      edge.node.frontmatter.images.forEach((x) => (x.image.id = uuid()))
+    );
+    // shuffle captcha puzzles
+    //setPuzzles(shuffle(edges));
+    setPuzzles(edges);
+  }, []);
 
   return (
     <main className="flex items-center justify-center h-screen p-2 align-middle">
@@ -28,10 +36,10 @@ const IndexPage = ({
           </div>
         ) : (
           <Captcha
-            captcha={edges[currentCaptchaIndex].node.frontmatter}
+            captcha={puzzles[currentCaptchaIndex]?.node?.frontmatter ?? {}}
             checked={[]}
             onSuccess={() => {
-              if (currentCaptchaIndex < edges.length - 1)
+              if (currentCaptchaIndex < puzzles.length - 1)
                 setCurrentCaptchaIndex(currentCaptchaIndex + 1);
               else {
                 setIsComplete(true);
