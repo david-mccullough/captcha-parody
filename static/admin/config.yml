@@ -30,7 +30,7 @@ collections:
         fields:
           - {
               label: "Image",
-              name: "Image",
+              name: "image",
               widget: "image",
               hint: "Please try to keep below ~200kb! https://tinypng.com/ is a great tool for image compression.",
               required: true,
