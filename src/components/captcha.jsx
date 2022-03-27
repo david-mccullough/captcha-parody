@@ -54,14 +54,16 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
       {/* Controls */}
       <div className="flex items-center justify-between gap-1 p-4 align-middle">
         <div className="flex items-center gap-1">
-          <div title="Information">
+          <button
+            title="Information"
+            onClick={() => alert("open tab to gamegrumps.com?")}
+            className="w-10 h-10 p-1 text-gray-800 transition rounded cursor-pointer sm:p-2 sm:w-12 sm:h-12 hover:text-gray-900 active:text-blue-600 hover:bg-gray-200 active:bg-blue-100 focus-visible:outline focus-visible:outline-blue-300 focus-visible:outline-4"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-10 h-10 p-1 text-gray-800 transition rounded cursor-pointer sm:p-2 sm:w-12 sm:h-12 hover:text-gray-900 active:text-blue-600 hover:bg-gray-200 active:bg-blue-100"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              onClick={() => alert("open tab to gamegrumps.com?")}
               strokeWidth={2}
             >
               <path
@@ -70,20 +72,22 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-          </div>
-          <div title="Restart">
+          </button>
+          <button
+            title="Restart"
+            className="w-10 h-10 p-1 text-gray-800 transition rounded cursor-pointer sm:p-2 sm:w-12 sm:h-12 hover:text-gray-900 active:text-blue-600 hover:bg-gray-200active:bg-blue-100 focus-visible::outline focus-visible::outline-blue-300 focus-visible::outline-4"
+            onClick={() => {
+              setCheckedList([]);
+              setShowFailMessage(false);
+              onReset();
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-10 h-10 p-1 text-gray-800 transition rounded cursor-pointer sm:p-2 sm:w-12 sm:h-12 hover:text-gray-900 active:text-blue-600 hover:bg-gray-200 active:bg-blue-100"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
-              onClick={() => {
-                setCheckedList([]);
-                setShowFailMessage(false);
-                onReset();
-              }}
             >
               <path
                 strokeLinecap="round"
@@ -91,18 +95,18 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
               />
             </svg>
-          </div>
+          </button>
         </div>
 
         <p
-          className={`flex-grow mr-3 text-right text-red-600 transition-opacity sm:text-base text-sm ${
+          className={`flex-grow sm:mr-3 mr-2 text-right text-red-600 transition-opacity sm:text-base text-sm leading-4 ${
             showFailMessage ? "opacity-100" : "opacity-0"
           }`}
         >
           Incorrect response, please try again.
         </p>
-        <a
-          className="block px-5 py-2 font-semibold text-white transition bg-blue-700 rounded cursor-pointer hover:bg-blue-600 active:bg-blue-700"
+        <button
+          className="block px-5 py-2 font-semibold text-white transition bg-blue-700 rounded cursor-pointer hover:bg-blue-600 active:bg-blue-700 focus-visible:outline focus-visible:outline-blue-300 focus-visible:outline-4"
           onClick={() => {
             if (
               // all correct ids are checked
@@ -126,7 +130,7 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
           }}
         >
           {checkedList.length > 0 ? "Verify" : "Skip"}
-        </a>
+        </button>
       </div>
     </div>
   );

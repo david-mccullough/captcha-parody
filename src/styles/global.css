@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 html {
-  background-color: #e7e5e4;
+  background-color: #e6e5e5;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
 }
