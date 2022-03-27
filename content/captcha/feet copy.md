@@ -2,14 +2,14 @@
 title: Even more feet
 priority: 2
 images:
-  - correct: true
+  - correct: false
     image: "../../static/img/pexels-2.jpg"
-  - correct: true
+  - correct: false
     image: "../../static/img/pexels-2.jpg"
-  - correct: true
+  - correct: false
     image: "../../static/img/pexels-2.jpg"
-  - correct: true
+  - correct: false
     image: "../../static/img/pexels-3.jpg"
-  - correct: true
+  - correct: false
     image: "../../static/img/pexels-2.jpg"
 ---

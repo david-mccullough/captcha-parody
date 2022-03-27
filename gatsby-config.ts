@@ -29,7 +29,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
-        path: `./content/captcha`,
+        path: `./content/`,
       },
     },
     // Remark

@@ -62,6 +62,12 @@ collections:
     editor:
       preview: false
     fields:
+      - {
+          label: "Title",
+          name: "title",
+          widget: "hidden",
+          default: "collection",
+        }
       - label: "Images"
         hint: "Pick which images are eligible to be picked at random to fill out other puzzles."
         name: "images"
@@ -75,4 +81,11 @@ collections:
               required: true,
               default: "",
               choose_url: false,
+            }
+          - {
+              label: "Is Correct",
+              name: "correct",
+              widget: "hidden",
+              default: false,
+              step: 10,
             }

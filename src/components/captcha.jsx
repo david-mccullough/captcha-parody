@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import SelectableImage from "./selectable-image";
 import { shuffle } from "../utils";
 
-const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
+const Captcha = ({
+  captcha,
+  checked,
+  onSuccess,
+  onFail,
+  onReset,
+  className,
+}) => {
   const [checkedList, setCheckedList] = useState(checked);
   const [showFailMessage, setShowFailMessage] = useState(false);
   const [images, setImages] = useState([]);
@@ -28,7 +35,9 @@ const Captcha = ({ captcha, checked, onSuccess, onFail, onReset }) => {
     : "";
 
   return (
-    <div className="max-w-xl overflow-hidden bg-white rounded-md shadow-xl">
+    <div
+      className={`max-w-xl min-w-full overflow-hidden bg-white rounded-md shadow-xl ${className}`}
+    >
       {/* Heading */}
       <div className="p-4 text-sm text-white bg-blue-700 sm:text-base">
         <h2>
