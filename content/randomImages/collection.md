@@ -1,4 +1,5 @@
 ---
+title: "collection"
 images:
   - image: ../../static/img/pexels-1.jpg
   - image: ../../static/img/pexels-2.jpg
