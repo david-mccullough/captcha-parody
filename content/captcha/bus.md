@@ -16,6 +16,8 @@ images:
     image: ../../static/img/pexels-6.jpg
   - correct: false
     image: ../../static/img/pexels-7.jpg
+  - image: ../../static/img/pexels-8.jpg
+    correct: false
   - correct: false
     image: ../../static/img/pexels-9.jpg
 ---
