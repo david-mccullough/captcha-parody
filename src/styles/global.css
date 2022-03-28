@@ -13,20 +13,16 @@ html {
 
 body {
   height: 100%;
-  height: -webkit-fill-available;
 }
 
 html {
   background-color: #e6e5e5;
   height: 100%;
-  height: -webkit-fill-available;
 }
 
 #___gatsby {
   height: 100%;
-  height: -webkit-fill-available;
 }
 #gatsby-focus-wrapper {
   height: 100%;
-  height: -webkit-fill-available;
 }

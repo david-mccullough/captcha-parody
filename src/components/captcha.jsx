@@ -115,7 +115,7 @@ const Captcha = ({
           Incorrect response, please try again.
         </p>
         <button
-          className="block px-5 py-2 font-semibold text-white transition bg-blue-700 rounded cursor-pointer hover:bg-blue-600 active:bg-blue-700 focus-visible:outline focus-visible:outline-blue-300 focus-visible:outline-4"
+          className="block px-5 py-2 text-base font-semibold text-white transition bg-blue-700 rounded cursor-pointer md:text-lg hover:bg-blue-600 active:bg-blue-700 focus-visible:outline focus-visible:outline-blue-300 focus-visible:outline-4"
           onClick={() => {
             if (
               // all correct ids are checked

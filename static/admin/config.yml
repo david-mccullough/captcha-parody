@@ -56,6 +56,7 @@ collections:
             }
   - name: "randomImages"
     label: "Random Images"
+    identifier_field: title
     extension: "md"
     folder: "content/randomImages"
     create: true
